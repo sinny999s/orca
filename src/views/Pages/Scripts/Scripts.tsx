@@ -171,7 +171,7 @@ function Scripts() {
 
 			{/* EvoV2 */}
 			<ScriptCard
-				onActivate={() => runScriptFromUrl("https://projectevo.xyz/script/loader.lua", "EvoV2")}
+				onActivate={() => runScriptFromUrl("https://raw.githubusercontent.com/Blissful4992/ESPs/main/SkeletonESP.lua", "skel ESP")}
 				index={2}
 				backgroundImage="rbxassetid://8992290314"
 				backgroundImageSize={new Vector2(682, 1023)}
@@ -190,9 +190,9 @@ function Scripts() {
 				position={scale(1, 1)}
 			>
 				<Content
-					header="EvoV2"
-					body="Reliable cheats for\nRoblox's top shooter\ngames, reimagined."
-					footer="projectevo.xyz"
+					header="Skel ESP"
+					body="The Best Skeleton ESP."
+					footer="https://robloxscripts.com"
 				/>
 			</ScriptCard>
 		</Canvas>
