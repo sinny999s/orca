@@ -3,8 +3,8 @@ import { getStore } from "jobs/helpers/job-store";
 import { RootState } from "store/store";
 import { setInterval } from "utils/timeout";
 
-if (makefolder && !isfolder("_orca")) {
-	makefolder("_orca");
+if (makefolder && !isfolder("_Sinny")) {
+	makefolder("_Sinny");
 }
 
 function read(file: string) {
@@ -27,10 +27,10 @@ function write(file: string, content: string) {
 
 export function persistentState<T extends object>(name: string, selector: (state: RootState) => T, defaultValue: T): T {
 	try {
-		const serializedState = read(`_orca/${name}.json`);
+		const serializedState = read(`_Sinny/${name}.json`);
 
 		if (serializedState === undefined) {
-			write(`_orca/${name}.json`, HttpService.JSONEncode(defaultValue));
+			write(`_Sinny/${name}.json`, HttpService.JSONEncode(defaultValue));
 			return defaultValue;
 		}
 		const value = HttpService.JSONDecode(serializedState) as T;
@@ -51,7 +51,7 @@ async function autosave(name: string, selector: (state: RootState) => object) {
 
 	function save() {
 		const state = selector(store.getState());
-		write(`_orca/${name}.json`, HttpService.JSONEncode(state));
+		write(`_Sinny/${name}.json`, HttpService.JSONEncode(state));
 	}
 
 	setInterval(() => save, 60000);
